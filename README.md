@@ -38,6 +38,8 @@ This solution is designed as an **prototype**, focusing on clarity, robustness, 
     - Request specific frame data or full summary via HTTP.  
     - Returns JSON responses.
 
+Due to the size constraints of the output video file.The output files are uploaded in the google drive
+link - https://drive.google.com/drive/folders/1v8TmwfD1Dl0W7lH19-SZvL9jlUyJ2H-T?usp=drive_link
 ---
 
 ## Approach
@@ -196,3 +198,4 @@ Returns JSON:
 > In a deployed API setup, clients can query specific frames instead of manually opening files.
 
 ---
+
