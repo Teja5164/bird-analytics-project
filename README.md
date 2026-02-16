@@ -22,7 +22,9 @@ This solution is designed as an **prototype**, focusing on clarity, robustness, 
 - Daylight conditions  
 - Static background  
 - Birds with slow, random motion
-input video link - https://drive.google.com/drive/folders/109VK-xY85_zi-S4z6c4lq3yRSR0zJ7Oi?usp=sharing
+
+
+Input video link - https://drive.google.com/drive/folders/109VK-xY85_zi-S4z6c4lq3yRSR0zJ7Oi?usp=sharing
 
 ---
 
@@ -199,6 +201,7 @@ Returns JSON:
 > In a deployed API setup, clients can query specific frames instead of manually opening files.
 
 ---
+
 
 
 
