@@ -1,0 +1,7 @@
+opencv-python
+numpy
+tqdm
+filterpy
+scipy
+fastapi
+uvicorn

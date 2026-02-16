@@ -1,0 +1,6 @@
+# Ignore outputs folder
+outputs/
+
+# Ignore any other large files
+*.mp4
+*.json
