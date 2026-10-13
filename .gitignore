@@ -4,3 +4,7 @@ outputs/
 # Ignore any other large files
 *.mp4
 *.json
+
+# Python cache
+__pycache__/
+*.pyc

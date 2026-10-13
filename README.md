@@ -48,8 +48,9 @@ link - https://drive.google.com/drive/folders/1v8TmwfD1Dl0W7lH19-SZvL9jlUyJ2H-T?
 ## Approach
 
 ### 1. Bird Detection
-- YOLOv8 is used for object detection.  
-- Detection is filtered and tuned for small bird sizes.  
+- Classical computer vision, so no trained model is needed: OpenCV MOG2 background subtraction works well because the camera and background are static.  
+- The frame is cropped to a region of interest and downscaled by 0.5× for speed, then cleaned up with morphological open/close.  
+- Contours are filtered by area and aspect ratio to match bird size and shape, then scaled back to full-frame bounding boxes.  
 
 ### 2. Bird Tracking
 - A centroid-based tracker assigns stable IDs.  
@@ -79,7 +80,7 @@ link - https://drive.google.com/drive/folders/1v8TmwfD1Dl0W7lH19-SZvL9jlUyJ2H-T?
     }
   ]
 }
-````
+```
 
 **Frame-specific JSON** example: `outputs/frame_123.json`
 
@@ -108,7 +109,7 @@ project/
 ├─ src/
 │   ├─ detect.py
 │   └─ tracker.py
-└─ run_pipeline_api.py
+└─ run_pipeline.py
 ```
 
 ---
@@ -116,10 +117,8 @@ project/
 ## Requirements
 
 * Python 3.8+
-* OpenCV: `pip install opencv-python`
-* FastAPI: `pip install fastapi uvicorn`
-* `src/detect.py` (BirdDetector)
-* `src/tracker.py` (CentroidTracker)
+* `pip install -r requirements.txt` (OpenCV, NumPy, FastAPI, Uvicorn)
+* Place the input video at `data/input_video.mp4`
 
 ---
 
@@ -128,7 +127,7 @@ project/
 ### 1. Run the pipeline & API server
 
 ```bash
-python run_pipeline_api.py
+python run_pipeline.py
 ```
 
 * The script will first **process the video**, generate the annotated video and `output.json`.
